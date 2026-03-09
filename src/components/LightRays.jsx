@@ -207,7 +207,9 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     fragColor.rgb = mix(vec3(gray), fragColor.rgb, saturation);
   }
 
-  fragColor.rgb *= raysColor;
+vec3 baseColor = vec3(0.047, 0.125, 0.259); // #0c2042
+
+fragColor.rgb = baseColor + fragColor.rgb * raysColor;
 }
 
 void main() {
