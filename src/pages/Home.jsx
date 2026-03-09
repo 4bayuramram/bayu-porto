@@ -1,9 +1,15 @@
 import LightRays from "../components/LightRays";
 import ProfileCard from "../components/ProfileCard";
 import Orb from "../components/Orb";
+import SplitText from "../components/SplitText";
+import ShinyText from "../components/ShinyText";
 import avatar from "../assets/bayu.jpg";
 
 export default function Home() {
+  const handleAnimationComplete = () => {
+    console.log("All letters have animated!");
+  };
+
   return (
     <section
       style={{
@@ -13,7 +19,7 @@ export default function Home() {
         overflow: "hidden",
       }}
     >
-      {/* Background 1 - LightRays */}
+      {/* Background LightRays */}
       <div
         style={{
           position: "absolute",
@@ -24,7 +30,7 @@ export default function Home() {
         <LightRays raysColor="#ffffff" />
       </div>
 
-      {/* Background 2 - Orb */}
+      {/* Background Orb */}
       <div
         style={{
           position: "absolute",
@@ -46,7 +52,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Content - Card */}
+      {/* MAIN CONTENT */}
       <div
         style={{
           position: "relative",
@@ -54,14 +60,18 @@ export default function Home() {
           height: "100%",
           display: "flex",
           alignItems: "center",
+          justifyContent: "flex-start",
           paddingLeft: "120px",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <h1 style={{ color: "white", fontSize: "40px", margin: 0 }}>
-            My Portfolio
-          </h1>
-
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            gap: "120px",
+          }}
+        >
+          {/* LEFT : CARD */}
           <ProfileCard
             name="bayu ramadhan"
             title="web dev"
@@ -78,6 +88,53 @@ export default function Home() {
             behindGlowEnabled
             innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
           />
+
+          {/* RIGHT : TEXT */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              color: "white",
+              maxWidth: "500px",
+              marginLeft: "120px",
+              marginTop: "60px",
+              gap: "20px",
+            }}
+          >
+            <SplitText
+              text="Hey Everyone..."
+              className="text-6xl font-bold"
+              delay={60}
+              duration={1.2}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="left"
+              onLetterAnimationComplete={handleAnimationComplete}
+              showCallback
+            />
+
+            <ShinyText
+              text="I’m passionate about building modern and user-focused websites."
+              speed={1.5}
+              delay={0}
+              color="#b5b5b9"
+              shineColor="#ffffff"
+              spread={120}
+              direction="left"
+              yoyo={false}
+              pauseOnHover={false}
+              disabled={false}
+              style={{ fontSize: "28px", fontWeight: "500" }}
+            />
+
+            <p style={{ marginTop: "16px", fontSize: "18px", color: "white" }}>
+              Welcome, let’s build something great.
+            </p>
+          </div>
         </div>
       </div>
     </section>
