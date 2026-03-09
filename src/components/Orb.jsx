@@ -101,9 +101,10 @@ export default function Orb({
       return vec4(colorIn.rgb / (a + 1e-5), a);
     }
 
-    const vec3 baseColor1 = vec3(0.611765, 0.262745, 0.996078);
-    const vec3 baseColor2 = vec3(0.298039, 0.760784, 0.913725);
-    const vec3 baseColor3 = vec3(0.062745, 0.078431, 0.600000);
+  //  ganti warna 
+    const vec3 baseColor1 = vec3(0.0, 0.67, 0.94);   // biru react
+    const vec3 baseColor2 = vec3(1.0, 1.0, 1.0);     // putih cahaya
+    const vec3 baseColor3 = vec3(0.65, 0.68, 0.72);  // abu metalik
     const float innerRadius = 0.6;
     const float noiseScale = 0.65;
 
@@ -232,36 +233,10 @@ export default function Orb({
     window.addEventListener("resize", resize);
     resize();
 
-    let targetHover = 0;
-    let lastTime = 0;
-    let currentRot = 0;
-    const rotationSpeed = 0.3;
-
-    const handleMouseMove = (e) => {
-      const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const width = rect.width;
-      const height = rect.height;
-      const size = Math.min(width, height);
-      const centerX = width / 2;
-      const centerY = height / 2;
-      const uvX = ((x - centerX) / size) * 2.0;
-      const uvY = ((y - centerY) / size) * 2.0;
-
-      if (Math.sqrt(uvX * uvX + uvY * uvY) < 0.8) {
-        targetHover = 1;
-      } else {
-        targetHover = 0;
-      }
-    };
-
-    const handleMouseLeave = () => {
-      targetHover = 0;
-    };
-
-    container.addEventListener("mousemove", handleMouseMove);
-    container.addEventListener("mouseleave", handleMouseLeave);
+   let targetHover = 0;
+   let lastTime = 0;
+   let currentRot = 0;
+   const rotationSpeed = 0.3;
 
     let rafId;
     const update = (t) => {
@@ -273,7 +248,7 @@ export default function Orb({
       program.uniforms.hoverIntensity.value = hoverIntensity;
       program.uniforms.backgroundColor.value = hexToVec3(backgroundColor);
 
-      const effectiveHover = forceHoverState ? 1 : targetHover;
+      const effectiveHover = 0;
       program.uniforms.hover.value +=
         (effectiveHover - program.uniforms.hover.value) * 0.1;
 
@@ -286,14 +261,12 @@ export default function Orb({
     };
     rafId = requestAnimationFrame(update);
 
-    return () => {
-      cancelAnimationFrame(rafId);
-      window.removeEventListener("resize", resize);
-      container.removeEventListener("mousemove", handleMouseMove);
-      container.removeEventListener("mouseleave", handleMouseLeave);
-      container.removeChild(gl.canvas);
-      gl.getExtension("WEBGL_lose_context")?.loseContext();
-    };
+   return () => {
+     cancelAnimationFrame(rafId);
+     window.removeEventListener("resize", resize);
+     container.removeChild(gl.canvas);
+     gl.getExtension("WEBGL_lose_context")?.loseContext();
+   };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hue, hoverIntensity, rotateOnHover, forceHoverState, backgroundColor]);
 
