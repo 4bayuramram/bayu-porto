@@ -129,6 +129,7 @@ export default function Home() {
               pauseOnHover={false}
               disabled={false}
               style={{ fontSize: "28px", fontWeight: "500" }}
+              className="custom-size-2"
             />
 
             <p style={{ marginTop: "16px", fontSize: "18px", color: "white" }}>

@@ -1,5 +1,11 @@
 .shiny-text {
   display: inline-block;
-  font-size: 24px;
   font-weight: 500;
+}
+.custom-size-2 {
+  font-size: 28px;
+}
+
+.custom-size-3 {
+  font-size: 18px;
 }
