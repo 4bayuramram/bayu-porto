@@ -5,7 +5,7 @@ export default function Languages() {
       <ul className="space-y-2">
         <li>javascript</li>
         <li>html</li>
-       
+        
       </ul>
     </div>
   );
