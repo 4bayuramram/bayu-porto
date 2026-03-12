@@ -1,23 +1,27 @@
 import { useState, useEffect } from "react";
 import GooeyNav from "../components/about/Gooeynav";
 
-import TechFrontend from "../container/tech/TechFrontend";
-import TechBackend from "../container/tech/TechBackend";
+import Frameworks from "../container/tech/Frameworks";
+import Languages from "../container/tech/Languages";
+import ToolsAndDatabase from "@/container/tech/ToolsAndDatabase";
+
 
 export default function Tech() {
   const [active, setActive] = useState(0);
 
   const items = [
-    { label: "Frontend", href: "#frontend" },
-    { label: "Backend", href: "#backend" },
+    { label: "Languages", href: "#languages" },
+    { label: "Frameworks / liberaries ", href: "#frameworks" },
+    { label: "Tools and DataBase", href: "#Tools" },
   ];
 
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
 
-      if (hash === "#frontend") setActive(0);
-      if (hash === "#backend") setActive(1);
+      if (hash === "#languages") setActive(0);
+      if (hash === "#frameworks") setActive(1);
+      if (hash === "#Tools") setActive(2);
     };
 
     window.addEventListener("hashchange", handleHashChange);
@@ -27,8 +31,9 @@ export default function Tech() {
   }, []);
 
   const renderContent = () => {
-    if (active === 0) return <TechFrontend />;
-    if (active === 1) return <TechBackend />;
+    if (active === 0) return <Languages/>;
+    if (active === 1) return <Frameworks />;
+    if (active === 2) return <ToolsAndDatabase />;
   };
 
   return (
