@@ -5,7 +5,7 @@ export default function TechBackend() {
       <ul className="space-y-2">
         <li>Node.js</li>
         <li>Express</li>
-        <li>MongoDB</li>
+       
       </ul>
     </div>
   );
