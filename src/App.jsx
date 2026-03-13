@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import AboutTech from "./pages/AboutTech";
 import Tech from "./pages/Tech"
+import Portofolio from "./pages/Portofolio";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/tech" element={<Tech />} />
         <Route path="/abouttech" element={<AboutTech />} />
+        <Route path="/portofolio" element={<Portofolio />} />
       </Routes>
     </BrowserRouter>
   );
