@@ -1,4 +1,5 @@
-import ProjectCard from "../components/projectcard/ProjectCard";
+import ProjectCard from "../../components/projectcard/ProjectCard";
+import NavD from "../../components/NavD";
 
 import {
   SiNextdotjs,
@@ -13,6 +14,17 @@ import { FaReact, FaNodeJs } from "react-icons/fa";
 export default function Portofolio() {
   return (
     <div className=" bg-gray-800 flex flex-col items-center gap-8 py-10">
+      <div
+        style={{
+          position: "relative",
+          display: "inline-block",
+          padding: "6px 14px",
+          borderRadius: "999px",
+          overflow: "hidden",
+        }}
+      >
+        <NavD />
+      </div>
       <div className="text-center mt-32">
         <h1 className="text-3xl font-bold">My Projects</h1>
         <p className="text-gray-500">Selected projects and work.</p>

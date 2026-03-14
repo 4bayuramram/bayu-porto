@@ -257,6 +257,11 @@ const ProfileCardComponent = ({
     shell.addEventListener("pointerenter", pointerEnterHandler);
     shell.addEventListener("pointermove", pointerMoveHandler);
     shell.addEventListener("pointerleave", pointerLeaveHandler);
+    shell.addEventListener("pointerdown", pointerMoveHandler);
+    shell.addEventListener("touchmove", (e) => {
+      const touch = e.touches[0];
+      pointerMoveHandler({ clientX: touch.clientX, clientY: touch.clientY });
+    });
 
     const handleClick = () => {
       if (!enableMobileTilt || location.protocol !== "https:") return;
@@ -290,6 +295,8 @@ const ProfileCardComponent = ({
       shell.removeEventListener("pointerenter", pointerEnterHandler);
       shell.removeEventListener("pointermove", pointerMoveHandler);
       shell.removeEventListener("pointerleave", pointerLeaveHandler);
+      shell.removeEventListener("pointerdown", pointerMoveHandler);
+      shell.removeEventListener("touchmove", pointerMoveHandler);
       shell.removeEventListener("click", handleClick);
       window.removeEventListener("deviceorientation", deviceOrientationHandler);
       if (enterTimerRef.current) window.clearTimeout(enterTimerRef.current);

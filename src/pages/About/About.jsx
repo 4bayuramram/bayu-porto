@@ -1,6 +1,6 @@
-import ChromaGrid from "../components/about/ChromeGrid";
-import ShinyText from "../components/ShinyText";
-import rama from "../assets/rama.jpg";
+import ChromaGrid from "../../components/about/ChromeGrid";
+import ShinyText from "../../components/ShinyText";
+import rama from "../../assets/rama.jpg";
 
 export default function About() {
   const items = [
@@ -18,7 +18,7 @@ export default function About() {
   return (
     <section className="bg-gray-800 flex justify-center">
       {/* add border-2 border-white whitespace for visual debugging */}
-      <div className=" whitespace bg-gray-800  w-[1200px] h-[600px] relative mt-14">
+      <div className=" bg-gray-800  w-[1200px] h-[600px] relative mt-14">
         {/* Judul About Me */}
         <div className="absolute left-12 top-[20%] flex items-center gap-4">
           {/* add border-2 border-[#b5b5b5] for visual debugging */}
@@ -38,7 +38,7 @@ export default function About() {
               speed={2}
               delay={0}
               color="#b5b5b5"
-              shineColor="text-white whitespace-nowrap"
+              shineColor="#ffffff"
               spread={100}
               direction="left"
               yoyo={false}
@@ -69,7 +69,7 @@ export default function About() {
         <div
           style={{
             position: "absolute",
-            top: "50%",
+            top: "65%",
             right: "50px",
             transform: "translateY(-50%)",
             width: "320px", // Width of the card

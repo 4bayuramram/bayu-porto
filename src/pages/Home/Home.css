@@ -1,0 +1,152 @@
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* background */
+.bg-lightrays {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bg-orb {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.orb-size {
+  width: 700px;
+  height: 700px;
+}
+
+/* main */
+.home-content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 120px;
+  box-sizing: border-box;
+}
+
+.home-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 120px;
+}
+
+.profile-card-wrapper {
+  z-index: 3;
+}
+
+/* text */
+.home-text {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  max-width: 500px;
+  margin-left: 120px;
+  margin-top: 60px;
+  gap: 20px;
+  z-index: 3;
+}
+
+.home-desc {
+  margin-top: 16px;
+  font-size: 18px;
+  color: white;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+
+  .home-text .text-6xl {
+    font-size: 42px !important;
+    line-height: 1.2;
+  }
+
+  .home-text {
+    transform: translateY(-70px);
+    align-items: center;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .home-content {
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .home-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+  }
+
+ .profile-card-wrapper {
+  transform: scale(.9);
+  touch-action: none;
+}
+
+  .home-text {
+    margin: 0;
+    max-width: 100%;
+    text-align: center;
+    gap: 16px;
+  }
+
+}
+
+/* phone layout */
+
+@media (max-width: 600px) {
+
+  .home-container {
+    height: 100dvh;
+  }
+
+  .home-content {
+    padding: 30px 20px;
+  }
+
+  .profile-card-wrapper {
+    transform: scale(.85);
+  }
+
+  .home-text {
+    font-size: 14px;
+  }
+
+  .home-desc {
+    font-size: 16px;
+  }
+
+  /* orb besar melewati card & text */
+  @media (max-width: 600px) {
+
+  .bg-orb {
+    transform: translateY(-80px);
+  }
+
+}
+  .orb-size {
+    width: 120vw;
+    height: 120vw;
+    max-width: 700px;
+    max-height: 700px;
+  }
+
+}

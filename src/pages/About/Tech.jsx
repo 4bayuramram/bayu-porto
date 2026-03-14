@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import GooeyNav from "../components/about/Gooeynav";
+import GooeyNav from "../../components/about/Gooeynav";
 
-import Frameworks from "../container/tech/Frameworks";
-import Languages from "../container/tech/Languages";
+import Frameworks from "../../container/tech/Frameworks";
+import Languages from "../../container/tech/Languages";
 import Tools from "@/container/tech/Tools";
 import DataBase from "@/container/tech/DataBase";
 
