@@ -1,7 +1,7 @@
 import { FaGitAlt, FaGithub, FaNpm } from "react-icons/fa";
 import { SiVite, SiEslint, SiPostcss, SiVercel } from "react-icons/si";
 import GlareHover from "../../components/about/GlareHover";
-import "./tools.css";
+import "./Tools.css";
 
 export default function Tools() {
   const tools = [
