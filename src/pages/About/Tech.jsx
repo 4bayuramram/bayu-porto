@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import GooeyNav from "../../components/about/Gooeynav";
+import GooeyNav from "../../components/about/GooeyNav";
 import "./tech.css";
 
 import Frameworks from "../../container/tech/Frameworks";
