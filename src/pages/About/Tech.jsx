@@ -4,7 +4,7 @@ import "./tech.css";
 
 import Frameworks from "../../container/tech/Frameworks";
 import Languages from "../../container/tech/Languages";
-import Tools from "@/container/tech/tools";
+import Tools from "@/container/tech/Tools";
 import DataBase from "@/container/tech/DataBase";
 
 export default function Tech() {
