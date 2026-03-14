@@ -1,8 +1,9 @@
 import { FaGitAlt, FaGithub, FaNpm } from "react-icons/fa";
 import { SiVite, SiEslint, SiPostcss, SiVercel } from "react-icons/si";
 import GlareHover from "../../components/about/GlareHover";
+import "./tools.css";
 
-export default function ToolsAndDatabase() {
+export default function Tools() {
   const tools = [
     {
       name: "Git",
@@ -42,12 +43,12 @@ export default function ToolsAndDatabase() {
   ];
 
   return (
-    <div className="p-10">
-      <div className="grid grid-cols-4 gap-6">
+    <div className="tools-wrapper">
+      <div className="tools-grid">
         {tools.map((tool, index) => (
           <div
             key={index}
-            className="group relative flex items-center gap-4 border border-black-400 rounded-lg p-4 transition-all duration-300 hover:scale-105 hover:bg-gray-700 overflow-hidden"
+            className="tools-card group relative flex items-center gap-4 border border-gray-500 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-gray-700 overflow-hidden"
           >
             <GlareHover
               glareColor="#ffffff"
@@ -67,7 +68,7 @@ export default function ToolsAndDatabase() {
               }}
             />
 
-            <div className="relative z-10 flex items-center gap-4">
+            <div className="tools-content relative z-10 flex items-center gap-4">
               {tool.icon}
 
               <div className="flex flex-col">

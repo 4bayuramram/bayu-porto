@@ -1,0 +1,84 @@
+.database-wrapper{
+  width:100%;
+  padding:24px;
+  box-sizing:border-box;
+}
+
+.database-grid{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+.database-card{
+  width:100%;
+  padding:18px;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width:1024px){
+
+.database-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width:768px){
+
+.database-wrapper{
+  padding:8px;
+}
+
+.database-grid{
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.database-card{
+  padding:18px;
+  min-height:80px;
+}
+
+.database-card svg{
+  font-size:30px;
+}
+
+}
+
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width:420px){
+
+.database-grid{
+  gap:12px;
+}
+
+.database-card{
+  min-height:76px;
+  padding:16px;
+}
+
+.database-card svg{
+  font-size:28px;
+}
+
+}
+

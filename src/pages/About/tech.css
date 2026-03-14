@@ -1,0 +1,39 @@
+/* =========================
+   MOBILE FIX
+   desktop tidak berubah
+========================= */
+
+@media (max-width:768px){
+
+.tech-container{
+  padding:16px 12px !important;
+}
+
+/* title */
+.tech-title h2{
+  font-size:22px;
+}
+
+/* NAV SCROLL WRAPPER */
+.tech-nav-mobile{
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  display:flex;
+  justify-content:flex-start;
+  padding-bottom:8px;
+}
+
+/* ukuran asli gooey dipertahankan */
+.tech-nav{
+  min-width:520px;
+}
+
+.tech-content{
+  padding:16px !important;
+  margin-top:0 !important;
+}
+
+
+
+}

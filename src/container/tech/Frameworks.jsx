@@ -1,49 +1,49 @@
 import { FaReact, FaNodeJs, FaBootstrap } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiExpress } from "react-icons/si";
 import GlareHover from "../../components/about/GlareHover";
+import "./Frameworks.css";
 
 export default function Frameworks() {
   const frameworks = [
     {
       name: "ReactJS",
       icon: <FaReact className="text-cyan-400 text-4xl" />,
-      level: "beginner",
+      level: "Beginner",
     },
     {
       name: "Tailwind",
       icon: <SiTailwindcss className="text-sky-400 text-4xl" />,
-      level: "beginner",
+      level: "Beginner",
     },
     {
       name: "Bootstrap",
       icon: <FaBootstrap className="text-purple-500 text-4xl" />,
-      level: "beginner",
+      level: "Beginner",
     },
     {
       name: "Next.js",
       icon: <SiNextdotjs className="text-white text-4xl" />,
-      level: "beginner",
+      level: "Beginner",
     },
     {
       name: "ExpressJS",
       icon: <SiExpress className="text-gray-300 text-4xl" />,
-      level: "beginner",
+      level: "Beginner",
     },
     {
       name: "NodeJS",
       icon: <FaNodeJs className="text-green-500 text-4xl" />,
-      level: "beginner",
+      level: "Beginner",
     },
   ];
 
   return (
-    <div className="p-10">
-
-      <div className="grid grid-cols-4 gap-6">
+    <div className="framework-wrapper">
+      <div className="framework-grid">
         {frameworks.map((fw, index) => (
           <div
             key={index}
-            className="group relative flex items-center gap-4 border border-white rounded-lg p-4 transition-all duration-300 hover:scale-105 hover:bg-gray-700 overflow-hidden"
+            className="framework-card group relative flex items-center gap-4 border border-gray-500 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-gray-700 overflow-hidden"
           >
             <GlareHover
               glareColor="#ffffff"
@@ -63,7 +63,7 @@ export default function Frameworks() {
               }}
             />
 
-            <div className="relative z-10 flex items-center gap-4">
+            <div className="framework-content relative z-10 flex items-center gap-4">
               {fw.icon}
 
               <div className="flex flex-col">

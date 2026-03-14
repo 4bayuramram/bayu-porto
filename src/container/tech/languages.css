@@ -1,0 +1,100 @@
+.languages-wrapper{
+  width:100%;
+  padding:24px;
+  box-sizing:border-box;
+}
+
+.languages-grid{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+.language-card{
+  width:100%;
+  padding:18px;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width:1024px){
+
+.languages-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width:768px){
+
+.languages-wrapper{
+  padding:8px;
+}
+
+.languages-grid{
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.language-card{
+  padding:18px;
+  min-height:80px;
+}
+
+.language-card svg{
+  font-size:30px;
+}
+
+}
+
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width:420px){
+
+.languages-grid{
+  gap:12px;
+}
+
+.language-card{
+  min-height:76px;
+  padding:16px;
+}
+
+.language-card svg{
+  font-size:28px;
+}
+
+}
+
+/* DESKTOP SPACING */
+.languages-wrapper,
+.framework-wrapper,
+.tools-wrapper,
+.database-wrapper{
+  margin-top:24px;
+}
+
+@media (max-width:768px){
+.languages-wrapper,
+.framework-wrapper,
+.tools-wrapper,
+.database-wrapper{
+  margin-top:0;
+}
+}

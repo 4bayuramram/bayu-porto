@@ -1,6 +1,7 @@
 import { FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { SiJavascript, SiTypescript } from "react-icons/si";
 import GlareHover from "../../components/about/GlareHover";
+import "./languages.css";
 
 export default function Languages() {
   const languages = [
@@ -17,23 +18,22 @@ export default function Languages() {
     {
       name: "JavaScript",
       icon: <SiJavascript className="text-yellow-400 text-4xl" />,
-      level: "beginner",
+      level: "Beginner",
     },
     {
       name: "TypeScript",
       icon: <SiTypescript className="text-blue-400 text-4xl" />,
-      level: "beginner",
+      level: "Beginner",
     },
   ];
 
   return (
-    <div className="p-10">
-
-      <div className="grid grid-cols-4 gap-6">
+    <div className="languages-wrapper">
+      <div className="languages-grid">
         {languages.map((lang, index) => (
           <div
             key={index}
-            className="group relative flex items-center gap-4 border border-[#000]-400 rounded-lg p-4 transition-all duration-300 hover:scale-105 hover:bg-gray-700 overflow-hidden"
+            className="language-card group relative flex items-center gap-4 border border-gray-500 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-gray-700 overflow-hidden"
           >
             <GlareHover
               glareColor="#ffffff"
@@ -53,7 +53,7 @@ export default function Languages() {
               }}
             />
 
-            <div className="relative z-10 flex items-center gap-4">
+            <div className="language-content relative z-10 flex items-center gap-4">
               {lang.icon}
 
               <div className="flex flex-col">

@@ -1,5 +1,6 @@
-import { SiPostgresql, SiMongodb, SiSupabase } from "react-icons/si";
+import { SiMongodb, SiSupabase } from "react-icons/si";
 import GlareHover from "../../components/about/GlareHover";
+import "./database.css";
 
 export default function Database() {
   const databases = [
@@ -16,13 +17,12 @@ export default function Database() {
   ];
 
   return (
-    <div className="p-10">
-
-      <div className="grid grid-cols-4 gap-6">
+    <div className="database-wrapper">
+      <div className="database-grid">
         {databases.map((db, index) => (
           <div
             key={index}
-            className="group relative flex items-center gap-4 border border-black-400 rounded-lg p-4 transition-all duration-300 hover:scale-105 hover:bg-gray-700 overflow-hidden"
+            className="database-card group relative flex items-center gap-4 border border-gray-500 rounded-lg transition-all duration-300 hover:scale-105 hover:bg-gray-700 overflow-hidden"
           >
             <GlareHover
               glareColor="#ffffff"
@@ -42,7 +42,7 @@ export default function Database() {
               }}
             />
 
-            <div className="relative z-10 flex items-center gap-4">
+            <div className="database-content relative z-10 flex items-center gap-4">
               {db.icon}
 
               <div className="flex flex-col">
