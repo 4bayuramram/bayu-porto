@@ -1,0 +1,49 @@
+.mnav-container{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  display:none;
+  justify-content:center;
+  z-index:100;
+  padding:10px 0;
+}
+
+.mnav-card{
+  position:relative;
+  width:90%;
+  max-width:420px;
+  height:48px;        /* penting */
+  background:#4b5563;
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.mnav-list{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  list-style:none;
+  margin:0;
+  padding:0;
+  width:100%;
+}
+
+.mnav-link{
+  text-decoration:none;
+  font-size:14px;
+  text-transform:lowercase;
+  color:#fff;
+  font-weight:500;
+}
+
+@media (max-width:768px){
+  .mnav-container{
+    display:flex;
+  }
+}

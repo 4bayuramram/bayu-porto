@@ -1,6 +1,10 @@
 import ChromaGrid from "../../components/about/ChromeGrid";
 import ShinyText from "../../components/ShinyText";
+import PillNav from "../../components/navbar/PilNav";
+
 import rama from "../../assets/rama.jpg";
+
+
 import "./about.css";
 
 export default function About() {
@@ -18,6 +22,26 @@ export default function About() {
 
   return (
     <section className="about-section bg-gray-800 flex justify-center">
+      {/* Navbar */}
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 scale-125">
+        <PillNav
+          items={[
+            { label: "Home", href: "/" },
+            { label: "About", href: "/abouttech" },
+            { label: "portofolio", href: "/portofolio" },
+          ]}
+          activeHref="/abouttech"
+          className="custom-nav"
+          ease="power2.easeOut"
+          baseColor="#1f2937"
+          pillColor="#ffffff"
+          hoveredPillTextColor="#ffffff"
+          pillTextColor="#000000"
+          theme="light"
+          initialLoadAnimation={false}
+        />
+      </div>
+
       <div className="about-container bg-gray-800 w-[1200px] h-[600px] relative mt-14">
         {/* Judul */}
         <div className="about-title absolute left-12 top-[20%] flex items-center gap-4">

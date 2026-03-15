@@ -4,7 +4,10 @@ import ProfileCard from "../../components/ProfileCard";
 import Orb from "../../components/Orb";
 import SplitText from "../../components/SplitText";
 import ShinyText from "../../components/ShinyText";
+import PillNav from "../../components/navbar/PilNav";
+
 import avatar from "../../assets/bayu.jpg";
+
 
 export default function Home() {
   const handleAnimationComplete = () => {
@@ -12,7 +15,27 @@ export default function Home() {
   };
 
   return (
-    <section className="home-container">
+    <section className="home-container min-h-screen">
+      {/* Navbar */}
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 scale-125">
+        <PillNav
+          items={[
+            { label: "Home", href: "/" },
+            { label: "About", href: "/abouttech" },
+            { label: "portofolio", href: "/portofolio" },
+          ]}
+          activeHref="/"
+          className="custom-nav"
+          ease="power2.easeOut"
+          baseColor="#1f2937"
+          pillColor="#ffffff"
+          hoveredPillTextColor="#ffffff"
+          pillTextColor="#000000"
+          theme="light"
+          initialLoadAnimation={false}
+        />
+      </div>
+
       {/* Background LightRays */}
       <div className="bg-lightrays">
         <LightRays raysColor="#ffffff" />
@@ -34,7 +57,6 @@ export default function Home() {
       {/* MAIN CONTENT */}
       <div className="home-content">
         <div className="home-flex">
-          {/* LEFT : CARD */}
           <div className="profile-card-wrapper">
             <ProfileCard
               name="bayu ramadhan"
@@ -53,7 +75,6 @@ export default function Home() {
             />
           </div>
 
-          {/* RIGHT : TEXT */}
           <div className="home-text">
             <SplitText
               text="Hey Everyone..."
