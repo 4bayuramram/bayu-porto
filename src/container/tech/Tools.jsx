@@ -1,10 +1,34 @@
 import { FaGitAlt, FaGithub, FaNpm } from "react-icons/fa";
-import { SiVite, SiEslint, SiPostcss, SiVercel } from "react-icons/si";
+import {
+  SiRedux,
+  SiVite,
+  SiEslint,
+  SiPostcss,
+  SiVercel,
+  SiNetlify,
+  SiPostman,
+  SiMongodb,
+  SiStorybook,
+  SiFigma,
+  SiDiagramsdotnet,
+} from "react-icons/si";
+
+import { TbTerminal, TbRefresh, TbSettings } from "react-icons/tb";
 import GlareHover from "../../components/about/GlareHover";
 import "./Tools.css";
 
 export default function Tools() {
   const tools = [
+    {
+      name: "Figma",
+      icon: <SiFigma className="text-purple-500 text-4xl" />,
+      level: "UI/UX Design",
+    },
+    {
+      name: "draw.io",
+      icon: <SiDiagramsdotnet className="text-orange-500 text-4xl" />,
+      level: "System Diagram",
+    },
     {
       name: "Git",
       icon: <FaGitAlt className="text-orange-500 text-4xl" />,
@@ -19,6 +43,16 @@ export default function Tools() {
       name: "NPM",
       icon: <FaNpm className="text-red-500 text-4xl" />,
       level: "Package Manager",
+    },
+    {
+      name: "Redux",
+      icon: <SiRedux className="text-purple-500 text-4xl" />,
+      level: "State Management",
+    },
+    {
+      name: "Storybook",
+      icon: <SiStorybook className="text-pink-500 text-4xl" />,
+      level: "UI Documentation",
     },
     {
       name: "Vite",
@@ -36,8 +70,38 @@ export default function Tools() {
       level: "CSS Processor",
     },
     {
+      name: "Nodemon",
+      icon: <TbRefresh className="text-4xl" />,
+      level: "Dev Tool",
+    },
+    {
+      name: "Mongoose",
+      icon: <SiMongodb className="text-green-500 text-4xl" />,
+      level: "MongoDB ODM",
+    },
+    {
+      name: "dotenv",
+      icon: <TbSettings className="text-4xl" />,
+      level: "Env Config",
+    },
+    {
+      name: "Postman",
+      icon: <SiPostman className="text-orange-500 text-4xl" />,
+      level: "API Testing and Documentation",
+    },
+    {
+      name: "cURL",
+      icon: <TbTerminal className="text-4xl" />,
+      level: "HTTP Client",
+    },
+    {
       name: "Vercel",
       icon: <SiVercel className="text-white text-4xl" />,
+      level: "Deployment Platform",
+    },
+    {
+      name: "Netlify",
+      icon: <SiNetlify className="text-teal-400 text-4xl" />,
       level: "Deployment Platform",
     },
   ];
