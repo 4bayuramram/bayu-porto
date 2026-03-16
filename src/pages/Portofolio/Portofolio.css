@@ -1,6 +1,11 @@
 @media (max-width: 640px) {
   .grid {
     grid-template-columns: 1fr !important;
-    width: 90% !important;
+    width: 85% !important;
+    gap: 24px !important;
+  }
+
+  .project-card {
+    transform: scale(0.9);
   }
 }

@@ -7,6 +7,7 @@ import ShinyText from "../../components/ShinyText";
 import PillNav from "../../components/navbar/PilNav";
 
 import avatar from "../../assets/bayu.jpg";
+import Mnav from "../../components/mnavbar/Mnav";
 
 
 export default function Home() {
@@ -35,9 +36,11 @@ export default function Home() {
           initialLoadAnimation={false}
         />
       </div>
+      {/* Mobile Navbar */}
+      <Mnav />
 
       {/* Background LightRays */}
-      <div className="bg-lightrays">
+      <div className="bg-lightrays">``
         <LightRays raysColor="#ffffff" />
       </div>
 

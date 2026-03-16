@@ -6,39 +6,53 @@
   display:none;
   justify-content:center;
   z-index:100;
-  padding:10px 0;
+  padding:10px;
+  transition:transform .3s ease;
+}
+
+/* hide navbar */
+.mnav-container.hide{
+  transform:translateY(-120%);
+}
+
+/* background layer */
+.mnav-bg{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  backdrop-filter:blur(8px);
+  background:rgba(17,24,39,0.6);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  z-index:0;
+}
+
+.mnav-grid{
+  width:90%;
+  max-width:420px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  position:relative;
+  z-index:10;
 }
 
 .mnav-card{
-  position:relative;
-  width:90%;
-  max-width:420px;
-  height:48px;        /* penting */
   background:#4b5563;
-  border-radius:12px;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  border-radius:10px;
+  min-height:48px;
+  transition:all .3s ease;
 }
 
-.mnav-list{
-  position:relative;
-  z-index:2;
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  list-style:none;
-  margin:0;
-  padding:0;
-  width:100%;
+.mnav-card:hover{
+  background:#374151;
 }
 
 .mnav-link{
   text-decoration:none;
+  color:white;
   font-size:14px;
-  text-transform:lowercase;
-  color:#fff;
   font-weight:500;
 }
 
@@ -46,4 +60,9 @@
   .mnav-container{
     display:flex;
   }
+}
+
+.mnav-card:active{
+  background:#374151;
+  transform:scale(0.95);
 }

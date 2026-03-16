@@ -1,6 +1,7 @@
 import ChromaGrid from "../../components/about/ChromeGrid";
 import ShinyText from "../../components/ShinyText";
 import PillNav from "../../components/navbar/PilNav";
+import Mnav from "../../components/mnavbar/Mnav";
 
 import rama from "../../assets/rama.jpg";
 
@@ -41,6 +42,8 @@ export default function About() {
           initialLoadAnimation={false}
         />
       </div>
+      {/* Mobile Navbar */}
+      <Mnav />
 
       <div className="about-container bg-gray-800 w-[1200px] h-[600px] relative mt-14">
         {/* Judul */}

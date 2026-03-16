@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import GlareHover from "../about/GlareHover";
 import "./Mnav.css";
 
@@ -10,26 +9,9 @@ export default function Mnav() {
     { label: "Portofolio", href: "/portofolio" },
   ];
 
-  const [show, setShow] = useState(true);
-
-  useEffect(() => {
-    let lastScroll = 0;
-
-    const handleScroll = () => {
-      const current = window.scrollY;
-      setShow(current < lastScroll);
-      lastScroll = current;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <nav
-      className={`mnav-container ${show ? "show" : "hide"}`}
-      onClick={() => setShow(!show)}
-    >
+    <nav className="mnav-container">
+      {/* background layer */}
       <div className="mnav-bg"></div>
 
       <div className="mnav-grid">
@@ -66,4 +48,63 @@ export default function Mnav() {
       </div>
     </nav>
   );
+}
+
+
+.mnav-container{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  display:none;
+  justify-content:center;
+  z-index:100;
+  padding:10px;
+}
+
+/* background layer */
+.mnav-bg{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  backdrop-filter:blur(8px);
+  background:rgba(17,24,39,0.6);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  z-index:0;
+}
+
+.mnav-grid{
+  width:90%;
+  max-width:420px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  position:relative;
+  z-index:10;
+}
+
+.mnav-card{
+  background:#4b5563;
+  border-radius:10px;
+  min-height:48px;
+  transition:all .3s ease;
+}
+
+.mnav-card:hover{
+  background:#374151;
+}
+
+.mnav-link{
+  text-decoration:none;
+  color:white;
+  font-size:14px;
+  font-weight:500;
+}
+
+@media (max-width:768px){
+  .mnav-container{
+    display:flex;
+  }
 }
