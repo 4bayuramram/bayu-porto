@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import "./ChromeGrid.css";
+import { FaGithub } from "react-icons/fa";
 
 export const ChromaGrid = ({
   items,
@@ -147,7 +148,7 @@ export const ChromaGrid = ({
           key={i}
           className="chroma-card"
           onMouseMove={handleCardMove}
-          onClick={() => handleCardClick(c.url)}
+          onTouchStart={handleCardMove}
           style={{
             "--card-border": c.borderColor || "transparent",
             "--card-gradient": c.gradient,
@@ -159,7 +160,19 @@ export const ChromaGrid = ({
           </div>
           <footer className="chroma-info">
             <h3 className="name">{c.title}</h3>
-            {c.handle && <span className="handle">{c.handle}</span>}
+            <span
+              className="handle github-handle"
+              onClick={() => handleCardClick(c.url)}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+                cursor: "pointer",
+              }}
+            >
+              <FaGithub />
+              {c.handle}
+            </span>
             <p className="role">{c.subtitle}</p>
             {c.location && <span className="location">{c.location}</span>}
           </footer>

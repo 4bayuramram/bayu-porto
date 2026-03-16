@@ -33,6 +33,26 @@
 }
 
 /* card */
+
+.about-card img{
+  object-fit: cover;
+  object-position: right;
+}
+
+
+.github-handle{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  cursor:pointer;
+  transition:transform .2s, color .2s;
+}
+
+.github-handle:hover{
+  transform:scale(1.05);
+  color:#8FD3E8;
+}
+
 .about-card{
   position:relative !important;
   top:0 !important;
@@ -40,7 +60,7 @@
   transform:none !important;
 
   width:200px !important;
-  height:280px !important;
+  height:220px !important;
 
   margin-left:20px;
 }
