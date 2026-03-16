@@ -19,7 +19,7 @@ export default function Portofolio() {
   return (
     <div className="bg-gray-800 w-full flex flex-col items-center">
       {/* Desktop Navbar */}
-      <div className="fixed top-6 z-50 scale-125 hidden md:block">
+      <div className="absolute top-6 right-[330px] z-50 scale-100">
         <PillNav
           items={[
             { label: "Home", href: "/" },

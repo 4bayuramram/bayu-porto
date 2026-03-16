@@ -24,7 +24,7 @@ export default function About() {
   return (
     <section className="about-section bg-gray-800 flex justify-center">
       {/* Navbar */}
-      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 scale-125">
+      <div className="absolute top-6 right-[330px] z-50 scale-100">
         <PillNav
           items={[
             { label: "Home", href: "/" },
@@ -59,7 +59,7 @@ export default function About() {
           <p className="mb-4">
             <ShinyText
               text="Hi everyone! My name is bayu ramadhan as a web developer from Cirebon, West Java. I have 1 year of experience in Front-End web development. I really enjoy what I do right now, in my opinion, creating programs is not just a job, but also an art that has aesthetic value."
-              speed={2}
+              speed={3}
               delay={0}
               color="#b5b5b5"
               shineColor="#ffffff"

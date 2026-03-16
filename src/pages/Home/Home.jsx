@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <section className="home-container min-h-screen">
       {/* Navbar */}
-      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 scale-125">
+      <div className="absolute top-6 right-[330px] z-50 scale-100">
         <PillNav
           items={[
             { label: "Home", href: "/" },
@@ -32,7 +32,7 @@ export default function Home() {
           pillColor="#ffffff"
           hoveredPillTextColor="#ffffff"
           pillTextColor="#000000"
-          theme="light"
+          theme="dark"
           initialLoadAnimation={false}
         />
       </div>
@@ -40,12 +40,12 @@ export default function Home() {
       <Mnav />
 
       {/* Background LightRays */}
-      <div className="bg-lightrays">``
+      <div className="bg-lightrays">
         <LightRays raysColor="#ffffff" />
       </div>
 
       {/* Background Orb */}
-      <div className="bg-orb">
+      <div className="bg-orb mt-20">
         <div className="orb-size">
           <Orb
             hoverIntensity={2}
@@ -58,9 +58,9 @@ export default function Home() {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="home-content">
+      <div className="home-content ">
         <div className="home-flex">
-          <div className="profile-card-wrapper">
+          <div className="profile-card-wrapper mt-10">
             <ProfileCard
               name="bayu ramadhan"
               title="web dev"

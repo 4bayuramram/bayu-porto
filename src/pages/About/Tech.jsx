@@ -46,7 +46,7 @@ export default function Tech() {
         {/* TITLE */}
         <div className="tech-title flex items-center gap-4 mb-4">
           <h2 className="text-3xl font-bold text-white whitespace-nowrap">
-            Skills
+            Tech Stack and Skills
           </h2>
           <div className="flex-1 h-[2px] bg-gray-500"></div>
         </div>
