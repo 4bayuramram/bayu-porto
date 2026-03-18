@@ -1,0 +1,33 @@
+.layout{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  gap:40px;
+  padding:40px;
+}
+
+/* kiri */
+.left{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* kanan */
+.right{
+  position:sticky;
+  top:100px;
+}
+
+.line{
+  width:60px;
+  height:2px;
+  background:#ffd54f;
+  margin:20px 0;
+}
+
+/* card override biar mirip */
+.blog-card{
+  background:#111 !important;
+  border-radius:16px !important;
+  padding:20px !important;
+}

@@ -1,0 +1,40 @@
+.detail-wrapper{
+  display:flex;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+.detail-card{
+  max-width:800px;
+  width:100%;
+  background:#eaeaea;
+  padding:30px;
+  border-radius:12px;
+}
+
+.detail-card h1{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.date{
+  font-size:14px;
+  color:#555;
+}
+
+.line{
+  width:80px;
+  height:2px;
+  background:#ffd54f;
+  margin:20px 0;
+}
+
+.detail-card img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+.content{
+  line-height:1.6;
+}

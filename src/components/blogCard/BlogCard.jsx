@@ -1,7 +1,11 @@
-export default function BlogCard({ post, onClick }) {
+import { useNavigate } from "react-router-dom";
+
+export default function BlogCard({ post }) {
+  const navigate = useNavigate();
+
   return (
     <div
-      onClick={() => onClick(post)}
+      onClick={() => navigate(`/blog/${post.id}`)}
       className="blog-card"
       style={{
         display: "flex",
