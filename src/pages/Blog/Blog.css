@@ -1,33 +1,128 @@
-.layout{
-  display:grid;
-  grid-template-columns: 2fr 1fr;
-  gap:40px;
-  padding:40px;
+* {
+  box-sizing: border-box;
 }
 
-/* kiri */
-.left{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px 40px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* kanan */
-.right{
-  position:sticky;
-  top:100px;
+.layout {
+  display: flex;
+  gap: 40px;
+  align-items: stretch; /* kiri-kanan sama tinggi */
 }
 
-.line{
-  width:60px;
-  height:2px;
-  background:#ffd54f;
-  margin:20px 0;
+.left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: flex-start; /* isi card dari atas */
+  min-height: 100vh; /* selalu tinggi penuh viewport */
 }
 
-/* card override biar mirip */
-.blog-card{
-  background:#111 !important;
-  border-radius:16px !important;
-  padding:20px !important;
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.line {
+  width: 60px;
+  height: 2px;
+  background: #ffd54f;
+  margin: 12px 0 20px 0;
+}
+
+.right button {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: left;
+}
+
+.right button:hover {
+  background: #ffd54f;
+  color: #000;
+}
+
+.active-btn {
+  background: #ffd54f !important;
+  color: #000 !important;
+}
+
+.blog-card {
+  background: #111;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  transition: 0.2s;
+  width: 100%; /* selalu penuh */
+  max-width: none; /* hapus pembatas */
+  margin: 0; /* hapus auto margin */
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+}
+
+.blog-card h3 {
+  margin: 6px 0;
+  color: #ffd54f;
+}
+
+.blog-card p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.blog-card img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .right {
+    width: 100%;
+  }
+
+  .blog-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .blog-card img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.no-articles {
+  text-align: center;
+  color: #fff;
+  opacity: 0.7;
 }
