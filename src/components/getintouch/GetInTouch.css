@@ -1,0 +1,106 @@
+.get-in-touch {
+  background: #111;
+  padding: 30px;
+  border-radius: 16px;
+  color: #fff;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.get-in-touch h3 {
+  color: #ffd54f;
+  margin-bottom: 15px;
+}
+
+.get-in-touch p {
+  color: #fff;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #222;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #ffd54f;
+  box-shadow: 0 0 5px rgba(255, 213, 79, 0.5); /* efek fokus */
+}
+
+textarea {
+  height: 150px;
+}
+
+button {
+  background: #ffd54f;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+  width: 100%;
+}
+
+button:hover {
+  background: #fff;
+  color: #1a1a1a;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Animasi pada tombol saat klik */
+button:active {
+  transform: translateY(2px);
+}
+
+/* Efek hover pada form group */
+.form-group:hover {
+  background-color: rgba(255, 213, 79, 0.1); /* memberi efek hover pada form input */
+  border-radius: 8px;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .get-in-touch h3 {
+    font-size: 1.4rem;
+  }
+  .get-in-touch p {
+    font-size: 1rem;
+  }
+  input,
+  textarea,
+  button {
+    font-size: 14px;
+  }
+}
