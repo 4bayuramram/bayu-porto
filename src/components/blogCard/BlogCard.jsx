@@ -14,54 +14,76 @@ export default function BlogCard({ post }) {
   return (
     <div
       onClick={handleClick}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.border = "1px solid #fff";
+        e.currentTarget.style.transform = "translateY(-4px)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.border = "1px solid rgba(255,255,255,0.3)";
+        e.currentTarget.style.transform = "translateY(0)";
+      }}
       className="blog-card"
       style={{
         display: "flex",
         justifyContent: "space-between",
-        gap: "15px",
-        padding: "16px",
-        borderRadius: "12px",
-        background: "#1a1a1a",
+        gap: "16px",
+        padding: "18px",
+        borderRadius: "16px",
+        background: "#4b5563",
+        border: "1px solid rgba(255,255,255,0.3)",
         cursor: post.type === "article" ? "default" : "pointer",
-        marginBottom: "16px",
+        marginBottom: "12px",
+        transition: "0.2s ease",
       }}
     >
       <div style={{ flex: 1 }}>
-        {/* badge */}
         <span
           style={{
-            fontSize: "10px",
-            padding: "4px 8px",
-            borderRadius: "6px",
-            background:
-              post.type === "blog"
-                ? "#ffd54f"
-                : post.type === "article"
-                ? "#4fc3f7"
-                : "#81c784",
-            color: "#000",
+            fontSize: "11px",
+            padding: "4px 10px",
+            borderRadius: "999px",
+            border: "1px solid #fff",
+            color: "#fff",
             display: "inline-block",
-            marginBottom: "6px",
+            marginBottom: "8px",
           }}
         >
           {post.type}
         </span>
 
-        <p style={{ fontSize: "12px", opacity: 0.6 }}>{post.date}</p>
+        <p style={{ fontSize: "12px", opacity: 0.6, color: "#fff" }}>
+          {post.date}
+        </p>
 
-        <h3 style={{ margin: "6px 0", color: "#ffd54f" }}>{post.title}</h3>
+        <h3
+          style={{
+            margin: "6px 0",
+            color: "#fff",
+            fontWeight: "600",
+          }}
+        >
+          {post.title}
+        </h3>
 
-        <p style={{ fontSize: "14px", opacity: 0.8 }}>{post.desc}</p>
+        <p
+          style={{
+            fontSize: "14px",
+            opacity: 0.7,
+            color: "#fff",
+          }}
+        >
+          {post.desc}
+        </p>
       </div>
 
       <img
         src={post.image}
         alt={post.title}
         style={{
-          width: "80px",
-          height: "80px",
+          width: "90px",
+          height: "90px",
           objectFit: "cover",
-          borderRadius: "8px",
+          borderRadius: "12px",
         }}
       />
     </div>
