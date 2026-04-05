@@ -58,7 +58,7 @@ export default function About() {
         <div className="about-text absolute left-20 top-[30%] w-[720px] p-4 z-10 flex flex-col justify-start">
           <p className="mb-4">
             <ShinyText
-              text="Hi everyone! My name is bayu ramadhan as a web developer from Cirebon, West Java. I have 1 year of experience in Front-End web development. I really enjoy what I do right now, in my opinion, creating programs is not just a job, but also an art that has aesthetic value."
+              text="Hi! I’m Bayu Ramadhan, a Web Developer focused on building responsive, scalable, and user-friendly web applications. I work with modern technologies like React, TypeScript, Node.js, Express.js, and PostgreSQL to turn ideas into reliable digital products."
               speed={2}
               delay={0}
               color="#b5b5b5"
@@ -71,7 +71,7 @@ export default function About() {
 
           <p className="mb-4">
             <ShinyText
-              text="My job is to build your website to be functional and user-friendly yet still attractive. In addition, I provide a personal touch to your product and ensure that the website catches attention and is easy to use."
+              text="I enjoy solving real problems through clean architecture, performance-focused development, and intuitive UI experiences. Currently, I’m continuously improving my skills by building production-ready projects that emphasize usability and maintainability"
               speed={2}
               delay={0}
               color="#b5b5b5"
