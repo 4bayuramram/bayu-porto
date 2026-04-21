@@ -59,8 +59,8 @@ export default function Portofolio() {
             { icon: SiSupabase, name: "Supabase", color: "text-green-500" },
             { icon: SiTailwindcss, name: "Tailwind", color: "text-sky-400" },
           ]}
-          demoLink="#"
-          githubLink="#"
+          demoLink="https://helloana.vercel.app"
+          githubLink="https://github.com/4bayuramram/helloana"
         />
 
         <ProjectCard
@@ -76,8 +76,8 @@ export default function Portofolio() {
             },
             { icon: SiTailwindcss, name: "Tailwind", color: "text-sky-400" },
           ]}
-          demoLink="#"
-          githubLink="#"
+          demoLink="https://rama-ebon.vercel.app"
+          githubLink="https://github.com/4bayuramram/bayu-porto"
         />
 
         <ProjectCard
@@ -90,7 +90,7 @@ export default function Portofolio() {
             { icon: SiExpress, name: "Express.js", color: "text-gray-400" },
             { icon: SiMongodb, name: "MongoDB", color: "text-green-500" },
           ]}
-          demoLink="https://yayasannurassyifasamarinda.com/"
+          demoLink="#"
           githubLink="#"
         />
       </div>
