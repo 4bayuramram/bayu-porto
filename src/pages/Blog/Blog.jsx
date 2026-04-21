@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { blogData } from "../../data/blogData";
 import "./Blog.css";
+import BlogCard from "../../components/blogCard/BlogCard";
 import GetInTouch from "../../components/getintouch/GetInTouch";
 
 export default function Blog() {
