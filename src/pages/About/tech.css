@@ -3,6 +3,12 @@
    desktop tidak berubah
 ========================= */
 
+@media (max-width: 768px) {
+  .desktop-nav-wrapper {
+    display: none;
+  }
+}
+
 @media (max-width:768px){
 
 .tech-container{
@@ -14,19 +20,36 @@
   font-size:22px;
 }
 
-/* NAV SCROLL WRAPPER */
+/* NAV SCROLL WRAPPER
+   overflow-x:auto forces overflow-y to also clip (CSS spec), which used to
+   cut off GooeyNav's blur/particle effect (it bleeds ~75-100px above/below
+   the pill). Fix: add vertical padding to give the effect room, then cancel
+   the extra spacing with a negative margin so layout doesn't shift. */
 .tech-nav-mobile{
   width:100%;
   overflow-x:auto;
-  overflow-y:hidden;
+  overflow-y:visible;
   display:flex;
   justify-content:flex-start;
-  padding-bottom:8px;
+  padding:80px 0;
+  margin:-80px 0 -72px;
 }
 
-/* ukuran asli gooey dipertahankan */
+/* tab lebih kecil untuk mobile */
 .tech-nav{
-  min-width:520px;
+  min-width:0;
+  width:max-content;
+}
+
+.gooey-nav-container nav ul{
+  gap:0.35em;
+  padding:0 0.5em;
+}
+
+.gooey-nav-container nav ul li a{
+  padding:0.45em 0.7em;
+  font-size:12px;
+  white-space:nowrap;
 }
 
 .tech-content{

@@ -1,4 +1,5 @@
 import "./Home.css";
+import { useEffect, useState } from "react";
 import LightRays from "../../components/LightRays";
 import ProfileCard from "../../components/ProfileCard";
 import Orb from "../../components/Orb";
@@ -11,14 +12,26 @@ import Mnav from "../../components/mnavbar/Mnav";
 
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.innerWidth <= 768
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 768px)");
+    const handleChange = (e) => setIsMobile(e.matches);
+    handleChange(mql);
+    mql.addEventListener("change", handleChange);
+    return () => mql.removeEventListener("change", handleChange);
+  }, []);
+
   const handleAnimationComplete = () => {
     console.log("All letters have animated!");
   };
 
   return (
     <section className="home-container min-h-screen">
-      {/* Navbar */}
-      <div className="absolute top-6 right-[330px] z-50 scale-100">
+      {/* Navbar (desktop only, Mnav handles mobile) */}
+      <div className="desktop-nav-wrapper absolute top-6 right-[330px] z-50 scale-100">
         <PillNav
           items={[
             { label: "Home", href: "/" },
@@ -44,18 +57,20 @@ export default function Home() {
         <LightRays raysColor="#ffffff" />
       </div>
 
-      {/* Background Orb */}
-      <div className="bg-orb mt-20">
-        <div className="orb-size">
-          <Orb
-            hoverIntensity={2}
-            rotateOnHover
-            hue={0}
-            forceHoverState={false}
-            backgroundColor="transparent"
-          />
+      {/* Background Orb (skipped on mobile: shader is the heaviest visual, phones don't need it) */}
+      {!isMobile && (
+        <div className="bg-orb mt-20">
+          <div className="orb-size">
+            <Orb
+              hoverIntensity={2}
+              rotateOnHover
+              hue={0}
+              forceHoverState={false}
+              backgroundColor="transparent"
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       {/* MAIN CONTENT */}
       <div className="home-content ">

@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import GooeyNav from "../../components/about/GooeyNav.jsx";
+import PillNav from "../../components/navbar/PilNav";
+import Mnav from "../../components/mnavbar/Mnav";
 import "./tech.css";
 
 import Frameworks from "../../container/tech/Frameworks";
 import Languages from "../../container/tech/Languages";
-import Tools from "@/container/tech/Tools";
-import DataBase from "@/container/tech/DataBase";
+import Tools from "../../container/tech/Tools";
+import DataBase from "../../container/tech/DataBase";
 
-export default function Tech() {
+export default function Tech({ standalone = true }) {
   const [active, setActive] = useState(0);
 
   const items = [
@@ -42,6 +44,31 @@ export default function Tech() {
 
   return (
     <section className="tech-section bg-gray-800 pb-20">
+      {/* Navbar (only when this page is visited directly, e.g. /tech — not when nested in AboutTech, which already has its own navbar) */}
+      {standalone && (
+        <>
+          <div className="desktop-nav-wrapper fixed top-6 right-[330px] z-50 scale-100">
+            <PillNav
+              items={[
+                { label: "Home", href: "/" },
+                { label: "About", href: "/abouttech" },
+                { label: "portofolio", href: "/portofolio" },
+              ]}
+              activeHref="/abouttech"
+              className="custom-nav"
+              ease="power2.easeOut"
+              baseColor="#1f2937"
+              pillColor="#ffffff"
+              hoveredPillTextColor="#ffffff"
+              pillTextColor="#000000"
+              theme="light"
+              initialLoadAnimation={false}
+            />
+          </div>
+          <Mnav />
+        </>
+      )}
+
       <div className="tech-container max-w-6xl mx-auto p-6 rounded-xl overflow-visible">
         {/* TITLE */}
         <div className="tech-title flex items-center gap-4 mb-4">

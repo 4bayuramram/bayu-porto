@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 
@@ -9,18 +10,45 @@ export default function ProjectCard({
   demoLink,
   githubLink,
 }) {
+  const videoRef = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => setInView(entries[0]?.isIntersecting ?? false),
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+
+    if (inView) {
+      el.play?.().catch(() => {});
+    } else {
+      el.pause?.();
+    }
+  }, [inView]);
+
   return (
     <div
       className="border rounded-lg shadow-sm p-4 flex flex-col overflow-visible 
 hover:scale-105 hover:bg-gray-200/30 transition duration-300"
     >
       <video
-        src={image}
-        autoPlay
+        ref={videoRef}
+        src={inView ? image : undefined}
+        preload="none"
         loop
         muted
         playsInline
-        className="w-full h-56 object-cover rounded-md"
+        className="w-full h-56 object-cover rounded-md bg-gray-700"
       />
 
       <div className="mt-3 flex flex-col gap-2 flex-1">

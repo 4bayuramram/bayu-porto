@@ -6,7 +6,7 @@ export default function AboutTech() {
   return (
     <>
       <About />
-      <Tech />
+      <Tech standalone={false} />
     </>
   );
 }

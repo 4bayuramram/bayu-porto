@@ -218,7 +218,7 @@ export default function Orb({
 
     function resize() {
       if (!container) return;
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const width = container.clientWidth;
       const height = container.clientHeight;
       renderer.setSize(width * dpr, height * dpr);
@@ -238,7 +238,10 @@ export default function Orb({
    let currentRot = 0;
    const rotationSpeed = 0.3;
 
-    let rafId;
+    let rafId = null;
+    let isVisible = true;
+    let isTabVisible = document.visibilityState !== "hidden";
+
     const update = (t) => {
       rafId = requestAnimationFrame(update);
       const dt = (t - lastTime) * 0.001;
@@ -259,10 +262,45 @@ export default function Orb({
 
       renderer.render({ scene: mesh });
     };
-    rafId = requestAnimationFrame(update);
+
+    const startLoop = () => {
+      if (rafId === null) {
+        lastTime = performance.now();
+        rafId = requestAnimationFrame(update);
+      }
+    };
+    const stopLoop = () => {
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    };
+    const syncLoop = () => {
+      if (isVisible && isTabVisible) startLoop();
+      else stopLoop();
+    };
+
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        isVisible = entries[0]?.isIntersecting ?? true;
+        syncLoop();
+      },
+      { threshold: 0.05 }
+    );
+    intersectionObserver.observe(container);
+
+    const handleVisibilityChange = () => {
+      isTabVisible = document.visibilityState !== "hidden";
+      syncLoop();
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    startLoop();
 
    return () => {
-     cancelAnimationFrame(rafId);
+     stopLoop();
+     intersectionObserver.disconnect();
+     document.removeEventListener("visibilitychange", handleVisibilityChange);
      window.removeEventListener("resize", resize);
      container.removeChild(gl.canvas);
      gl.getExtension("WEBGL_lose_context")?.loseContext();

@@ -1,3 +1,9 @@
+@media (max-width: 768px) {
+  .desktop-nav-wrapper {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) {
   .grid {
     grid-template-columns: 1fr !important;

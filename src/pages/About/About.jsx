@@ -21,14 +21,14 @@ export default function About() {
   return (
     <section className="about-section bg-gray-800 flex justify-center">
       {/* Navbar */}
-      <div className="fixed top-6 right-[330px] z-50 scale-100">
+      <div className="desktop-nav-wrapper fixed top-6 right-[330px] z-50 scale-100">
         <PillNav
           items={[
             { label: "Home", href: "/" },
-            { label: "About", href: "/abouttech" },
+            { label: "About", href: "/about" },
             { label: "portofolio", href: "/portofolio" },
           ]}
-          activeHref="/abouttech"
+          activeHref="/about"
           className="custom-nav"
           ease="power2.easeOut"
           baseColor="#1f2937"
@@ -42,7 +42,7 @@ export default function About() {
       {/* Mobile Navbar */}
       <Mnav />
 
-      <div className="about-container bg-gray-800 w-[1200px] h-[600px] relative mt-14">
+      <div className="about-container bg-gray-800 w-[min(1200px,94vw)] h-[600px] relative mt-14">
         {/* Judul */}
         <div className="about-title absolute left-12 top-[20%] flex items-center gap-4">
           <h1 className="text-white whitespace-nowrap text-3xl font-semibold p-2">
@@ -52,7 +52,7 @@ export default function About() {
         </div>
 
         {/* Text */}
-        <div className="about-text absolute left-20 top-[30%] w-[720px] p-4 z-10 flex flex-col justify-start">
+        <div className="about-text absolute left-20 top-[30%] w-[min(720px,55%)] p-4 z-10 flex flex-col justify-start">
           <p className="mb-4">
             <ShinyText
               text="Hi! I’m Bayu Ramadhan, a Web Developer focused on building responsive, scalable, and user-friendly web applications. I work with modern technologies like React, TypeScript, Node.js, Express.js, and PostgreSQL to turn ideas into reliable digital products."
@@ -85,10 +85,11 @@ export default function About() {
           className="about-card"
           style={{
             position: "absolute",
-            top: "65%",
+            top: "55%",
             right: "50px",
             transform: "translateY(-50%)",
-            width: "320px",
+            width: "340px",
+            aspectRatio: "4 / 5",
             zIndex: 1,
           }}
         >

@@ -19,7 +19,7 @@ export default function Portofolio() {
   return (
     <div className="bg-gray-800 w-full flex flex-col items-center">
       {/* Desktop Navbar */}
-      <div className="absolute top-6 right-[330px] z-50 scale-100">
+      <div className="desktop-nav-wrapper absolute top-6 right-[330px] z-50 scale-100">
         <PillNav
           items={[
             { label: "Home", href: "/" },
@@ -48,7 +48,7 @@ export default function Portofolio() {
       </div>
 
       {/* Projects */}
-      <div className="grid grid-cols-3 gap-6 max-w-[1200px] w-full pb-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] w-full px-4 pb-20">
         <ProjectCard
           title="Helloana"
           description="Helloana is a nail beauty website with a single admin login. The admin manages booking schedules, updates services, prices, information, and images."
